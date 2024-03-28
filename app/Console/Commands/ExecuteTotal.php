@@ -19,7 +19,7 @@ class ExecuteTotal extends Command
      *
      * @var string
      */
-    protected $description = 'Calculate total cost of all orders and store in executed table';
+    protected $description = 'Calcular total de ordenes y costos para luego almacenarlos en la tabla executed';
 
 
     /**
@@ -28,6 +28,6 @@ class ExecuteTotal extends Command
     public function handle()
     {
         TotalOrdersAndCost::dispatch();
-        $this->info('Total orders and cost caculated and stored successfully');
+        $this->info('El total de ordenes y costos fue almacenado correctamente.');
     }
 }
