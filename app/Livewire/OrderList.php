@@ -15,7 +15,9 @@ class OrderList extends Component
         ->leftJoin('orders_lines as ol', 'orders.id', '=', 'ol.order_id')
         ->groupBy('orders.id')
         ->get();
+
+        $lastExecuted = Executed::latest()->first();
         
-        return view('livewire.order-list', ['orders' => $orders]);
+        return view('livewire.order-list', ['orders' => $orders, 'lastExecuted' => $lastExecuted]);
     }
 }
